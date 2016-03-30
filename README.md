@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/vitornere/partiuformar.png?label=ready&title=Ready)](http://waffle.io/vitornere/partiuformar)
+
 # PartiuFormar
 ===============
 
