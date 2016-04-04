@@ -1,39 +1,45 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Users</h1>
-
-<table>
+<div id="container_margin" class="container">
+ <div class="container">
+  <div id="user_nav">
+   <div class="row vertical-offset-100">
+    <div class="panel-body">
+   <div class="panel panel-default margin-table " style="margin-bottom: -15px;  ">
+    <div class="panel-heading">
+      <center>
+      <h2>#PartiuFormar</h2>
+      </center>
+      <center><h3>Informações dos Usuários</h3></center>
+        <table class="table table-hover" border="1">
   <thead>
     <tr>
+
+    
       <th>Registration</th>
       <th>Name</th>
       <th>Last name</th>
       <th>Current semester</th>
       <th>Year registration</th>
       <th>Email</th>
-      <th>Password digest</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
+      
+<% @users.each do |user| %>
+      <tr class= "info">
         <td><%= user.registration %></td>
         <td><%= user.name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.current_semester %></td>
         <td><%= user.year_registration %></td>
         <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+</tr>
+  </thead>
+</table>  
+    </div>
+      <p align="right"><a href="<%= new_user_path %>" id = "Editar" class="btn btn-lg btn-success btn-block" role="button" >Novo Usuário</a></p>
+     </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>

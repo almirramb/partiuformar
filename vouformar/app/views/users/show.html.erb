@@ -1,39 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div id="container_margin" class="container">
+ <div class="container">
+  <div id="user_nav">
+   <div class="row vertical-offset-100">
+    <div class="panel-body">
+   <div class="panel panel-default margin-table " style="margin-bottom: -15px;  ">
+    <div class="panel-heading">
+      <center>
+      <h2>#PartiuFormar</h2>
+      </center>
+      <center><h3>Informações dos Usuários</h3></center>
+        <table class="table table-hover" border="1">
+  <thead>
+    <tr>
 
-<p>
-  <strong>Registration:</strong>
-  <%= @user.registration %>
-</p>
+    
+      <th>Registration</th>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Current semester</th>
+      <th>Year registration</th>
+      <th>Email</th>
+      
+      <tr class= "info">
+        <td><%= @user.registration %></td>
+        <td><%= @user.name %></td>
+        <td><%= @user.last_name %></td>
+        <td><%= @user.current_semester %></td>
+        <td><%= @user.year_registration %></td>
+        <td><%= @user.email %></td>
+      </tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+</tr>
+  </thead>
+</table>  
+    </div>
+      <p align="right"><a href="<%= new_user_path %>" id = "Editar" class="btn btn-lg btn-success btn-block" role="button" >Novo Usuário</a></p>
+     </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Current semester:</strong>
-  <%= @user.current_semester %>
-</p>
-
-<p>
-  <strong>Year registration:</strong>
-  <%= @user.year_registration %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

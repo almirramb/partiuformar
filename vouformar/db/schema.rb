@@ -25,17 +25,4 @@ ActiveRecord::Schema.define(version: 20160404052300) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "nome_do_Aluno"
-    t.string   "sobrenome"
-    t.integer  "matricula"
-    t.integer  "semestre_atual"
-    t.integer  "ano_de_ingresso"
-    t.string   "email"
-    t.string   "curso"
-    t.string   "senha"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
 end
