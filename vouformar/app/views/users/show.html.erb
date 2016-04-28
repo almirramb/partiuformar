@@ -12,26 +12,26 @@
         <table class="table table-hover" border="1">
   <thead>
     <tr>
-
-    
-      <th>Registration</th>
-      <th>Name</th>
-      <th>Last name</th>
-      <th>Current semester</th>
-      <th>Year registration</th>
-      <th>Email</th>
-      
-      <tr class= "info">
-        <td><%= @user.registration %></td>
-        <td><%= @user.name %></td>
-        <td><%= @user.last_name %></td>
-        <td><%= @user.current_semester %></td>
-        <td><%= @user.year_registration %></td>
-        <td><%= @user.email %></td>
-      </tr>
-
-</tr>
+        <th>Registration</th>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Current semester</th>
+        <th>Year registration</th>
+        <th>Email</th>
+        
+        <% @users.each do |user| %>
+          <tr class= "info">
+            <td><%= user.registration %></td>
+            <td><%= user.name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.current_semester %></td>
+            <td><%= user.year_registration %></td>
+            <td><%= user.email %></td>
+          </tr>
+        <% end %>
+    </tr>
   </thead>
+  
 </table>  
     </div>
       <p align="right"><a href="<%= new_user_path %>" id = "Editar" class="btn btn-lg btn-success btn-block" role="button" >Novo Usuário</a></p>
