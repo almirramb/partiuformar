@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  percent: 1
+  description: MyString
+  name: MyString
+  path: MyString
+
+two:
+  percent: 1
+  description: MyString
+  name: MyString
+  path: MyString

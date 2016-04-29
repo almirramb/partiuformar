@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404052300) do
+ActiveRecord::Schema.define(version: 20160429175454) do
+
+  create_table "progresses", force: :cascade do |t|
+    t.integer  "percent"
+    t.string   "description"
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer  "registration"
