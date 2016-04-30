@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
-//= require bootstrap.min
 //= require jquery.dcjqaccordion.2.7
 //= require jquery.scrollTo.min
 //= require jquery.nicescroll
@@ -23,4 +22,4 @@
 //= require jquery-ui-1.9.2.custom.min
 //= require bootstrap-switch
 //= require jquery.tagsinput
-//= require form-component
+//= require form-component  
