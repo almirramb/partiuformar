@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!--% if @have_session %> -->
+<% if @have_session %>
 
   <section id="container">
   <!-- **********************************************************************************************************************************************************
@@ -50,16 +50,16 @@
         <%= render 'layouts/footer' %>
         <!--footer end-->
 
-<!--
-<!% else %>
-  <!%= render 'users/login' %>
+
+<% else %>
+  <%= render 'users/login' %>
   <script>
     $.backstretch([
-        "<!%= asset_path 'login-bg.jpg' %>"
+        "<%= asset_path 'login-bg.jpg' %>"
       ], {speed: 500});
  </script>
-<!% end %>
--->
+<% end %>
+
 </section>
 </body>
 </html>
