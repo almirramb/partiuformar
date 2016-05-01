@@ -21,3 +21,4 @@
 //= require bootstrap-sprockets
 //= require bootstrap-switch
 //= require form-component  
+//= require jquery.backstretch.min

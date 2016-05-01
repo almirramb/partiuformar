@@ -10,6 +10,8 @@ def application
 	@notifications_size = Progress.count
 end
 
-
+def have_session
+	@have_session = session[:user_id]
+end
 
 end
