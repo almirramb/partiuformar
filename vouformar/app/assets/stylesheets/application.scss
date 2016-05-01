@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require style-responsive
  *= require style
+ *= require style-responsive
  *= require table-responsive
  */
-@import "bootstrap-sprockets";
+
 @import "bootstrap";

@@ -33,8 +33,6 @@ class User < ActiveRecord::Base
 
 #implementar autenticação de usuario aqui
 
-  def refresh!
-    s = User.find_by_name(self.name)
-  end
+
 
 end
