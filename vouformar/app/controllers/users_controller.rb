@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  attr_accessor :password, :password_confirmation
+
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
   end
 
   # GET /users/1
@@ -29,8 +30,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :root, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -62,9 +64,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -73,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:registration, :name, :last_name, :current_semester, :year_registration, :email, :password_digest)
+      params.require(:user).permit(:registration, :name, :last_name, :current_semester, :year_registration, :email, :password, :password_confirmation)
     end
 end
