@@ -1,0 +1,77 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<center>
+   <h1 style="color:white">
+   Seja Bem Vindo ao #PartiuFormar</h2>
+</center>
+<!--main content start-->
+<section id="main-content">
+   <div class="container">
+   <div class="row mt">
+   <div class="col-lg-4 col-md-0 col-sm-8">
+      <h1 style="color:white"><i class="fa fa-university" aria-hidden="true"></i>
+         PartiuFormar
+      </h1>
+      <p>
+      <h3 style="color:white">
+         Você estudante da UnB, que deseja otimizar a organização da sua grade curricular no semestre, bem como projetar o seu fluxo para a conclusão do curso, conheça o #PartiuFormar. Aqui você pode realizar o planejamento do curso, sendo possível organizar e criar metas para cada disciplina no semestre. Poderá acompanhar seu desempenho e estimar qual será seu índice de rendimento acadêmico após um semestre.
+      </h3>
+      </p>
+   </div>
+   <div class="col-lg-4 col-md-0 col-sm-8">
+      <div id="login-page">
+         <!--div class="container"-->
+         <form class="form-login" action="/login" method="post" type="submit"> 
+            <h2 class="form-login-heading">Entre Agora</h2>
+            <div class="login-wrap">
+               <input type="text" name="registration" class="form-control" placeholder="User ID" autofocus>
+                  <br>
+                  <input type="password" name="password" class="form-control" placeholder="Password">
+                  <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation">
+                  <label class="checkbox">
+               <span class="pull-right">
+               <a data-toggle="modal" href="login.html#myModal"> Esqueceu a senha?</a>
+               </span>
+               </label>
+               <button class="btn btn-theme btn-block" href="/login" method="post" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+               <hr>
+               <div class="login-social-link centered">
+                  <p>or you can sign in via your social network</p>
+                  <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
+               </div>
+               <div class="registration">
+                  Não tem uma conta?<br/>
+                  <a class="" href="users/new">
+                  Cadastre-se aqui!
+                  </a>
+               </div>
+            </div>
+            <!-- Modal -->
+            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Esqueceu a senha ?</h4>
+                     </div>
+                     <div class="modal-body">
+                        <p>Entre com o seu e-mail para resetar sua senha.</p>
+                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                     </div>
+                     <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                        <button class="btn btn-theme" type="button">Confirmar</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   </div>
+</section>
+<script>
+$.backstretch([
+     "<%= asset_path 'login-bg.jpg' %>"
+], {speed: 500});
+</script>
