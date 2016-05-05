@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  before_action :has_logged?, :only => [:new, :create]
+  before_action :need_be_logged, :only => [:destroy]
 
 	def create
-    user = User.find_by_registration(:registration => params[login_params][:registration])
+    user = User.find_by_registration(params[:registration])
     # If the user exists AND the password entered is correct.
     if user && user.authenticate(params[:password])
       # Save the user id inside the browser cookie. This is how we keep the user 
@@ -9,14 +12,10 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
     end
 
-    redirect_to '/'
+    redirect_to '/users'
   end
 
   def new
-    @user = User.new
-  end
-
-  def login
     @user = User.new
   end
 

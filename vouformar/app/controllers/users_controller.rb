@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize
+  before_action :need_be_logged, :except => [:create, :new]
 
   attr_accessor :password, :password_confirmation
 
