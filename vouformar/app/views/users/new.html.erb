@@ -17,8 +17,8 @@
           					<%= f.text_field :current_semester, :class=>"form-control", :placeholder=>"Semestre Atual", :label=> "Semestre Atual"%>
           					<%= f.text_field :year_registration, :class=>"form-control", :placeholder=>"Ano de Ingresso", :label=> "Ano de Ingresso"%>
           					<%= f.email_field :email, :class=>"form-control", :placeholder=>"Email", :label=> "Email" %>
-          					<%= f.password_field :password_digest, :class=>"form-control", :placeholder=>"Senha", :label=> "Senha" %>
-          					<%= f.password_field :password_digest, :class=>"form-control", :placeholder=>"Confirmar Senha", :label=> "Confirmar Senha" %>
+          					<%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha", :label=> "Senha" %>
+          					<%= f.password_field :password_confirmation, :class=>"form-control", :placeholder=>"Confirmar Senha", :label=> "Confirmar Senha" %>
           					<br>
           					<%= f.submit "Enviar", :class=>"btn btn-lg btn-warning btn-block" %>
           					<br>
@@ -31,3 +31,9 @@
         </div>
     </center>
 </div>
+
+<script>
+$.backstretch([
+     "<%= asset_path 'login-bg.jpg' %>"
+], {speed: 500});
+</script>

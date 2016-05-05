@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 </head>
 <body>
 
-<% if @have_session %>
-
-  <section id="container">
+<% if current_user %>
   <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
@@ -49,16 +50,10 @@
         <!--footer start-->
         <%= render 'layouts/footer' %>
         <!--footer end-->
-
-
 <% else %>
-  <%= render 'users/login' %>
-  <script>
-    $.backstretch([
-        "<%= asset_path 'login-bg.jpg' %>"
-      ], {speed: 500});
- </script>
-<% end %>
+  <%= yield %>
+<% end %>  
+
 
 </section>
 </body>

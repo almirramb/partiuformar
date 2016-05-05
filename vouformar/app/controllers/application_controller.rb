@@ -10,15 +10,12 @@ def application
 	@notifications_size = Progress.count
 end
 
-def have_session
-	@have_session = session[:user_id]
-end
-
-private
-
 def current_user
-    @_current_user ||= session[:current_user_id] &&
-      User.find_by(id: session[:current_user_id])
+  @current_user ||= User.find(session[:user_id]) if session[:user_id]
 end
+helper_method :current_user
 
+def authorize
+  redirect_to '/' unless current_user
+end
 end
