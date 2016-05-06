@@ -19,7 +19,7 @@
                   <li>
                      <p class="green">You have <%= @notifications_size %> pending tasks</p>
                   </li>
-                  <%= @notifications.each do |notification| %>
+                  <% @notifications.each do |notification| %>
                   <li>
                      <a href="#">
                         <div class="task-info">
