@@ -16,7 +16,7 @@
    </head>
    <body>
       <section id="container" >
-         <!--% if current_user %-->
+         <% if current_user %>
          <!-- ****************************************************************************************
             TOP BAR CONTENT & NOTIFICATIONS
             ***************************************************************** -->
@@ -44,9 +44,9 @@
 
          <%= render 'layouts/footer' %>
 
-         <!--% else %>
-            <!%= yield %>
-            <!% end %-->  
+         <% else %>
+            <%= yield %>
+         <% end %>  
       </section>  
    </body>
 </html>
