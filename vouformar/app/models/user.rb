@@ -33,13 +33,19 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	validates_presence_of :password, message: "Senha é obrigatório"
-	validates_confirmation_of :password
-	validates_length_of :password, :within => 6..40, message: "Mínimo 6 digitos"
+	validates_presence_of :password, :on => :create, message: "Senha é obrigatório"
+	validates_confirmation_of :password, :on => :create
+	validates_length_of :password, :within => 6..40, :on => :create, message: "Mínimo 6 digitos"
 
-	validates_presence_of :password_confirmation, message: "Confirmar Senha é obrigatório"
-	validates_confirmation_of :password_confirmation
-	validates_length_of :password_confirmation, :within => 6..40
+	validates_presence_of :password_confirmation, :on => :create, message: "Confirmar Senha é obrigatório"
+	validates_confirmation_of :password_confirmation, :on => :create
+	validates_length_of :password_confirmation, :within => 6..40, :on => :create
+
+	validates_confirmation_of :password, :allow_blank => true, :allow_nil => true, :on => :update
+	validates_length_of :password, :within => 6..40, :allow_blank => true, :allow_nil => true, :on => :update, message: "Mínimo 6 digitos"
+
+	validates_confirmation_of :password_confirmation, :allow_blank => true, :allow_nil => true, :on => :update
+	validates_length_of :password_confirmation, :within => 6..40, :allow_blank => true, :allow_nil => true, :on => :update
 
 #implementar autenticação de usuario aqui
 

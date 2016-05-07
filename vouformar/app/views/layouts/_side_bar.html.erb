@@ -3,10 +3,14 @@
    <div id="sidebar"  class="nav-collapse ">
       <!-- sidebar menu start-->
       <ul class="sidebar-menu" id="nav-accordion">
-         <p class="centered"><a href="#">
-            <%= image_tag "ui-sam.jpg", class: "img-circle", style: 'width:60' %></a>
+         <p class="centered">
+         <%= link_to user_path(:id => current_user) do %>
+            <%= image_tag "ui-sam.jpg", class: "img-circle", style: 'width:60' %>
+         <% end %>
          </p>
-         <h5 class="centered">Desenho</h5>
+         <h5 class="centered">
+         <%= @user_name %>
+         </h5>
          <li class="mt">
             <a class="active" href="#">
             <i class="fa fa-search" aria-hidden="true"></i>

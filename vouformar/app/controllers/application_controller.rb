@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   def application
   	@notifications = Progress.all
   	@notifications_size = Progress.count
+    
+    user = User.find(current_user)
+    @user_name = user.name
   end
 
 private

@@ -53,9 +53,7 @@
          </form>  
          <form class="form-horizontal style-form" method="get">
             <a href="<%= edit_user_path %>"><button type="button" class="btn btn-primary"> Editar </button></a>
-            <% if current_user session[:user_id] = nil%>
-            <%= link_to  "Deletar Perfil", { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Deletar permanentemente seu perfil?' }, :class => "btn btn-danger"%>
-            <% end %>
+            <%= link_to  "Deletar Perfil", { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Deletar permanentemente seu perfil?' }, :class => "btn btn-danger active"%>
           </form>  
       </div>
    </div>
