@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 1
+  name: MyString
+  description: MyString
+  credits: 1
+  class: MyString
+  period: 1
+  horary: 2016-05-06 22:31:45
+  local: MyString
+  prerequisites: MyString
+
+two:
+  code: 1
+  name: MyString
+  description: MyString
+  credits: 1
+  class: MyString
+  period: 1
+  horary: 2016-05-06 22:31:45
+  local: MyString
+  prerequisites: MyString
