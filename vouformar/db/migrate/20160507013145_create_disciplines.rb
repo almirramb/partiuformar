@@ -5,7 +5,7 @@ class CreateDisciplines < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.integer :credits
-      t.string :class
+      t.string :classroom
       t.integer :period
       t.time :horary
       t.string :local
