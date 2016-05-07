@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :disciplines
+  resources :disciplines
   resources :users
 
   get '/login' => 'sessions#new'
