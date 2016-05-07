@@ -12,4 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require style
+ *= require style-responsive
+ *= require table-responsive
  */
+
+@import "bootstrap";

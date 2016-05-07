@@ -1,0 +1,36 @@
+<div id="container_margin" class="container">
+   <center>
+      <div class="container">
+         <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <center>
+                        <h3 class="panel-title">Editar Usuário</h3>
+                     </center>
+                  </div>
+                  <div class="panel-body">
+                     <%= bootstrap_form_for(@user) do |f| %>
+                     <%= f.text_field :registration, :class=>"form-control", :placeholder=>"Matrícula", :label=> "Matrícula"%>
+                     <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nome", :label=> "Nome"%>                    
+                     <%= f.text_field :last_name, :class=>"form-control", :placeholder=>"Sobrenome", :label=> "Sobrenome"%>
+                     <%= f.text_field :current_semester, :class=>"form-control", :placeholder=>"Semestre Atual", :label=> "Semestre Atual"%>
+                     <%= f.text_field :year_registration, :class=>"form-control", :placeholder=>"Ano de Ingresso", :label=> "Ano de Ingresso"%>
+                     <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email", :label=> "Email" %>
+                     <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha", :label=> "Senha" %>
+                     <%= f.password_field :password_confirmation, :class=>"form-control", :placeholder=>"Confirmar Senha", :label=> "Confirmar Senha" %>
+                     <br>
+                     <%= f.submit "Editar", :class=>"btn btn-lg btn-info btn-block" %>
+                     <br>
+                     <%= link_to user_path(:id => current_user) do %>
+                        <button class="btn btn-lg btn-default btn-block">Voltar</button>
+                     <% end %>
+                     
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </center>
+</div>
