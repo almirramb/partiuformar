@@ -7,9 +7,11 @@ class ApplicationController < ActionController::Base
   def application
   	@notifications = Progress.all
   	@notifications_size = Progress.count
-    
-    user = User.find(current_user)
-    @user_name = user.name
+
+    if current_user
+      user = User.find(current_user)
+      @user_name = user.name
+    end
   end
 
 private
@@ -25,7 +27,7 @@ private
   helper_method :need_be_logged
 
   def current_user
-  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
 end
