@@ -1,53 +1,43 @@
 <%= form_for(@discipline) do |f| %>
-  <% if @discipline.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
+<div id="container_margin" class="container">
+   <center>
+      <div class="container">
+         <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <center>
+                        <h3 class="panel-title"><%= @discipline.name%></h3>
+                     </center>
+                  </div>
+                  <div class="panel-body">
+                     <%= bootstrap_form_for(@discipline) do |f| %>
+                      <% if @discipline.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
 
-      <ul>
-      <% @discipline.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                          <ul>
+                          <% @discipline.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                     <%= f.text_field :code, :class=>"form-control", :placeholder=>"Código", :label=> "Código"%>
+                     <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nome", :label=> "Nome"%>                         <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descrição", :label=> "Descrição"%>
+                     <%= f.text_field :credits, :class=>"form-control", :placeholder=>"Créditos", :label=> "Créditos"%>
+                     <%= f.text_field :classroom, :class=>"form-control", :placeholder=>"Turma", :label=> "Turma"%>
+                     <%= f.email_field :period, :class=>"form-control", :placeholder=>"Periodo", :label=> "Periodo" %>
+                     <%= f.password_field :horary, :class=>"form-control", :placeholder=>"Horario", :label=> "Horario" %>
+                     <%= f.password_field :local, :class=>"form-control", :placeholder=>"Local", :label=> "Local" %>
+                     <%= f.text_field :prerequisites, :class=>"form-control", :placeholder=>"Pré-Requisitos", :label=> "Pré-Requisitos"%>
 
-  <div class="field">
-    <%= f.label :code %><br>
-    <%= f.number_field :code %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :credits %><br>
-    <%= f.number_field :credits %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom %><br>
-    <%= f.text_field :classroom %>
-  </div>
-  <div class="field">
-    <%= f.label :period %><br>
-    <%= f.number_field :period %>
-  </div>
-  <div class="field">
-    <%= f.label :horary %><br>
-    <%= f.time_select :horary %>
-  </div>
-  <div class="field">
-    <%= f.label :local %><br>
-    <%= f.text_field :local %>
-  </div>
-  <div class="field">
-    <%= f.label :prerequisites %><br>
-    <%= f.text_field :prerequisites %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </center>
+</div>
 <% end %>
