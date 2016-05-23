@@ -1,3 +1,3 @@
 class Course < abstract_course
-  has_many :Emphasis
+  composed_of :Emphasis
 end

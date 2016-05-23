@@ -1,4 +1,6 @@
 class AbstractDiscipline < ActiveRecord::Base
+  belongs_to :Department
+  has_many :PreRequisite
   validates_presence_of :codeDiscipline, message: "Disciplina é obrigatório"
   validates_numericality_of :codeDiscipline, message: "Somente numeros"
 	validates_presence_of :nameDiscipline, message: "Nome da disciplina é obrigatório"
