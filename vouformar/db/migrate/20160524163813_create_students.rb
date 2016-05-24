@@ -3,7 +3,7 @@ class CreateStudents < ActiveRecord::Migration
     create_table :students do |t|
       t.integer :registration
       t.integer :year_registration
-      t.double :ira
+      t.float :ira
 
       t.timestamps null: false
     end
