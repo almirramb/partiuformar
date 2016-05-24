@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_action :need_be_logged, :only => [:destroy]
 
 	def create
-    user = User.find_by_registration(params[:registration])
+    user = User.find_by_email(params[:email])
     # If the user exists AND the password entered is correct.
     if user && user.authenticate(params[:password])
       # Save the user id inside the browser cookie. This is how we keep the user 
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 private
 
   def login_params
-      params.require(:user).permit(:registration, :password, :password_confirmation, :email)
+      params.require(:user).permit(:password, :password_confirmation, :email)
   end
 end
 

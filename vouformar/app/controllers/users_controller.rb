@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :need_be_logged, :except => [:create, :new]
 
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password, :password_confirmation, :address_attributes
+
 
   # GET /users
   # GET /users.json
   def index
-    @user = User.new
   end
 
   # GET /users/1
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.address = Address.new 
   end
 
   # GET /users/1/edit
@@ -29,7 +30,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
       session[:user_id] = nil
     end
 
-    @user.destroy
+    @user.destroy 
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'Usuário excluído com sucesso.' }
       format.json { head :no_content }
@@ -78,6 +78,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:registration, :name, :last_name, :current_semester, :year_registration, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :last_name, :email, :password, :password_confirmation, :cpf_attr, :address_attributes => [:cep, :public_place, :uf, :city])
     end
 end
