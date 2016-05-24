@@ -1,4 +1,3 @@
-class Emphasis < ActiveRecord::Base
-	belongs_to :abstract_course
-	
+class Emphasis < AbstractCourse
+	 has_and_belongs_to_many :course
 end
