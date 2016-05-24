@@ -1,4 +1,4 @@
-class Student < ActiveRecord::Base
+class Student < User
 
 	validates_presence_of :registration, message: "Matricula é obrigatório"
 	validates_uniqueness_of :registration, message: "Matricula existente"
