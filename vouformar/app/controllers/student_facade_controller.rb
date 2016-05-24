@@ -1,0 +1,2 @@
+class StudentFacadeController < ApplicationController
+end
