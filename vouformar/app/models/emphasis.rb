@@ -1,3 +1,3 @@
 class Emphasis < AbstractCourse
-	 has_and_belongs_to_many :course
+	 belongs_to :course
 end
