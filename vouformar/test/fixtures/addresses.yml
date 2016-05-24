@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cep: MyString
+  public_place: MyString
+  uf: MyString
+  city: MyString
+
+two:
+  cep: MyString
+  public_place: MyString
+  uf: MyString
+  city: MyString

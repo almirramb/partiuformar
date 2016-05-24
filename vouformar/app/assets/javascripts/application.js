@@ -15,6 +15,7 @@
 //= require jquery.dcjqaccordion.2.7
 //= require bootstrap-sprockets
 //= require bootstrap-switch
+//= require jquery_nested_form
 //= require jquery.scrollTo.min
 //= require jquery.nicescroll
 //= require common-scripts

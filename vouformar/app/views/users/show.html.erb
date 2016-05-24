@@ -5,14 +5,6 @@
          <h4 class="mb"><i class="fa fa-angle-right"></i> Informações dos Usuários</h4>
          <form class="form-horizontal style-form" method="get">
             <div class="form-group">
-               <label class="col-lg-2 col-sm-2 control-label">Matrícula</label>
-               <div class="col-lg-10">
-                  <p class="form-control-static"><%= @user.registration %></p>
-               </div>
-            </div>
-         </form>
-         <form class="form-horizontal style-form" method="get">
-            <div class="form-group">
                <label class="col-lg-2 col-sm-2 control-label">Nome</label>
                <div class="col-lg-10">
                   <p class="form-control-static"><%= @user.name %></p>
@@ -29,20 +21,12 @@
          </form>
          <form class="form-horizontal style-form" method="get">
             <div class="form-group">
-               <label class="col-lg-2 col-sm-2 control-label">Semestre atual</label>
+               <label class="col-lg-2 col-sm-2 control-label">CPF</label>
                <div class="col-lg-10">
-                  <p class="form-control-static"><%= @user.current_semester %></p>
+                  <p class="form-control-static"><%= @user.cpf_attr %></p>
                </div>
             </div>
          </form>
-         <form class="form-horizontal style-form" method="get">
-            <div class="form-group">
-               <label class="col-lg-2 col-sm-2 control-label">Ano de ingresso</label>
-               <div class="col-lg-10">
-                  <p class="form-control-static"><%= @user.year_registration %></p>
-               </div>
-            </div>
-         </form>                           
          <form class="form-horizontal style-form" method="get">
             <div class="form-group">
                <label class="col-lg-2 col-sm-2 control-label">E-mail</label>
@@ -50,7 +34,39 @@
                   <p class="form-control-static"><%= @user.email %></p>
                </div>
             </div>
+         </form>
+         <form class="form-horizontal style-form" method="get">
+            <div class="form-group">
+               <label class="col-lg-2 col-sm-2 control-label">CEP</label>
+               <div class="col-lg-10">
+                  <p class="form-control-static"><%= @user.address.cep %></p>
+               </div>
+            </div>
          </form>  
+         <form class="form-horizontal style-form" method="get">
+            <div class="form-group">
+               <label class="col-lg-2 col-sm-2 control-label">Logradouro</label>
+               <div class="col-lg-10">
+                  <p class="form-control-static"><%= @user.address.public_place %></p>
+               </div>
+            </div>
+         </form>
+         <form class="form-horizontal style-form" method="get">
+            <div class="form-group">
+               <label class="col-lg-2 col-sm-2 control-label">UF</label>
+               <div class="col-lg-10">
+                  <p class="form-control-static"><%= @user.address.uf %></p>
+               </div>
+            </div>
+         </form>
+         <form class="form-horizontal style-form" method="get">
+            <div class="form-group">
+               <label class="col-lg-2 col-sm-2 control-label">Cidade</label>
+               <div class="col-lg-10">
+                  <p class="form-control-static"><%= @user.address.city %></p>
+               </div>
+            </div>
+         </form>
          <form class="form-horizontal style-form" method="get">
             <a href="<%= edit_user_path %>"><button type="button" class="btn btn-primary"> Editar </button></a>
             <%= link_to  "Deletar Perfil", { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Deletar permanentemente seu perfil?' }, :class => "btn btn-danger active"%>

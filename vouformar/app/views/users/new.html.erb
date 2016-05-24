@@ -10,13 +10,18 @@
                         </center>
       				</div>
                     <div class="panel-body">
-          				<%= bootstrap_form_for(@user) do |f| %>
-          					<%= f.text_field :registration, :class=>"form-control", :placeholder=>"Matrícula", :label=> "Matrícula"%>
-          					<%= f.text_field :name, :class=>"form-control", :placeholder=>"Nome", :label=> "Nome"%>          					
+          				<%= bootstrap_form_for @user do |f| %>
+          					<!--%= f.text_field :registration, :class=>"form-control", :placeholder=>"Matrícula", :label=> "Matrícula"%> -->
+          					<%= f.text_field :name, :class=>"form-control", :placeholder=>"Nome", :label=> "Nome"%>			
           					<%= f.text_field :last_name, :class=>"form-control", :placeholder=>"Sobrenome", :label=> "Sobrenome"%>
-          					<%= f.text_field :current_semester, :class=>"form-control", :placeholder=>"Semestre Atual", :label=> "Semestre Atual"%>
-          					<%= f.text_field :year_registration, :class=>"form-control", :placeholder=>"Ano de Ingresso", :label=> "Ano de Ingresso"%>
+          					<%= f.text_field :cpf_attr, :class=>"form-control", :placeholder=>"CPF", :label=> "CPF"%>
           					<%= f.email_field :email, :class=>"form-control", :placeholder=>"Email", :label=> "Email" %>
+                    <%= f.fields_for :address_attributes do |addres| %>
+                      <%= addres.text_field :cep, :class=>"form-control", :placeholder=>"CEP", :label=> "CEP"%>
+                      <%= addres.text_field :uf, :class=>"form-control", :placeholder=>"UF", :label=> "UF"%>
+                      <%= addres.text_field :public_place, :class=>"form-control", :placeholder=>"Endereço", :label=> "Endereço"%>
+                      <%= addres.text_field :city, :class=>"form-control", :placeholder=>"Cidade", :label=> "Cidade"%>
+                    <% end %>
           					<%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha", :label=> "Senha" %>
           					<%= f.password_field :password_confirmation, :class=>"form-control", :placeholder=>"Confirmar Senha", :label=> "Confirmar Senha" %>
           					<br>
