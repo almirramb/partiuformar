@@ -1,0 +1,2 @@
+class AdminFacadeController < ApplicationController
+end
