@@ -38,7 +38,7 @@ gem 'bootstrap_form'
 gem 'bootstrap-material-design'
 
 # Validates CPF
-#gem 'validates_cpf_cnpj'
+gem 'validates_cpf_cnpj'
 
 # Nested Form
 gem "nested_form"

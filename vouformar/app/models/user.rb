@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 	validates_presence_of :email, message: "Email é obrigatório"
 	validates_uniqueness_of :email, message: "Email existente"
 
+	validates_cpf :cpf_attr
 
 	has_secure_password
 
