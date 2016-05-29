@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
+	has_one :address
+
 	before_save { self.email = email.downcase }
 
-	validates_presence_of :registration, message: "Matricula é obrigatório"
-	validates_uniqueness_of :registration, message: "Matricula existente"
-	validates_numericality_of :registration, message: "Somente numeros" #pesquisar validação da matricula
-	validates_length_of :registration, :maximum => 9, message: "Máximo 9 digitos"
+	accepts_nested_attributes_for :address, allow_destroy: true
 
 	validates_length_of :name, :maximum => 50, message: "Máximo 50 caracteres."
 	validates_format_of :name, :with => /[A-Za-z]/, :on => :create, message: "Formato inválido"
@@ -12,24 +11,11 @@ class User < ActiveRecord::Base
 	validates_length_of :last_name, :maximum => 50, message: "Máximo 50 caracteres"
 	#validates_format_of :last_name, :with => /[A-Za-z]/, :on => :create, message: "Formato invalido"
 
-	validates_length_of :current_semester, :maximum => 16, message: "Semestre invalido, comente de 1 a 16"
-	validates_numericality_of :current_semester, message: "Somente numeros"
-	validates :current_semester, :numericality => { :greater_than_or_equal_to => 0 , :message => "não é permitido numeros negativos"}
-
-	validates :year_registration, 
-	inclusion: {
-		in: 2000..Date.today.year, 
-		message: "Ano invalido" 
-	},
-	format: { 
-		with: /(20)\d{2}/i, 
-		message: "Formato invalido"
-	}
-	validates_presence_of :year_registration, message: "O ano de Ingresso é obrigatório"
-
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, message: "Formato invalido"
 	validates_presence_of :email, message: "Email é obrigatório"
 	validates_uniqueness_of :email, message: "Email existente"
+
+	validates_cpf :cpf_attr
 
 	has_secure_password
 

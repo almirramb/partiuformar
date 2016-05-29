@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration: 1
+  year_registration: 1
+  ira: 
+
+two:
+  registration: 1
+  year_registration: 1
+  ira: 

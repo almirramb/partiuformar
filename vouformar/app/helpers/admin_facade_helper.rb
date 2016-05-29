@@ -1,0 +1,2 @@
+module AdminFacadeHelper
+end

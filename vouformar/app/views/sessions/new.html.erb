@@ -24,15 +24,19 @@
          <form class="form-login" action="/login" method="post" type="submit"> 
             <h2 class="form-login-heading">Entre Agora</h2>
             <div class="login-wrap">
-               <input type="text" name="registration" class="form-control" placeholder="User ID" autofocus>
-                  <br>
-                  <input type="password" name="password" class="form-control" placeholder="Password">
-                  <label class="checkbox">
+               <input type="text" name="email" class="form-control" placeholder="Email" required autofocus>
+               <br>
+               <input type="password" name="password" class="form-control" placeholder="Password" required>
+               <div class="checkbox">
+                   <label>
+                     <input type="checkbox" value="remember-me"> Remember me
+                   </label>
+                 </div>
                <span class="pull-right">
                <a data-toggle="modal" href="login.html#myModal"> Esqueceu a senha?</a>
                </span>
                </label>
-               <button class="btn btn-primary btn-block" href="/login" method="post" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+               <button class="btn btn-primary btn-block" href="/login" method="post" type="submit"><i class="fa fa-lock"></i> Entrar</button>
                <hr>
                <div class="login-social-link centered">
                   <p>or you can sign in via your social network</p>
@@ -55,7 +59,7 @@
                      </div>
                      <div class="modal-body">
                         <p>Entre com o seu e-mail para resetar sua senha.</p>
-                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                        <input type="text" name="cpf_attr" placeholder="CPF" autocomplete="off" class="form-control placeholder-no-fix">
                      </div>
                      <div class="modal-footer">
                         <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>

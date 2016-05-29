@@ -3,12 +3,6 @@ class CreateDisciplines < ActiveRecord::Migration
     create_table :disciplines do |t|
       t.integer :code
       t.string :name
-      t.string :description
-      t.integer :credits
-      t.string :classroom
-      t.integer :period
-      t.time :horary
-      t.string :local
       t.string :prerequisites
 
       t.timestamps null: false
