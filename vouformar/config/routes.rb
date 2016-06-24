@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :grids
   resources :disciplines
   resources :disciplines
   resources :users
